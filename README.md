@@ -9,5 +9,6 @@
 - Saving/save files 
 - Potential debugging menu
 - Scoring system? 
+- Multiplatform support using cmake for compilation
 
 Full spec sheet for the project can be seen [here](https://github.com/Jeffinators/Rogue/blob/master/rogue.pdf)
