@@ -1,6 +1,6 @@
-[submodule "lib/sdl"]
+[submodule "external/sdl"]
 	path = external/sdl
 	url = https://github.com/Vita3K/sdl
-[submodule "lib/sdl2-cmake-scripts"]
+[submodule "external/sdl2-cmake-scripts"]
 	path = external/sdl2-cmake-scripts
 	url = https://github.com/tcbrindle/sdl2-cmake-scripts
