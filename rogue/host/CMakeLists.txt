@@ -1,8 +1,7 @@
 add_library(
 	host
 	STATIC
-	include/host/sample.h
-	src/sample.cpp
+	include/host/host.h
 )
 
 target_include_directories(host PUBLIC include)

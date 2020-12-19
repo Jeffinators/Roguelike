@@ -1,8 +1,9 @@
 add_library(
 	algorithms
 	STATIC
-	include/sample.h
-	src/sample.cpp
+	include/algorithms/algorithms.h
+	src/algorithms.cpp
 )
 
 target_include_directories(algorithms PUBLIC include)
+target_link_libraries(algorithms PUBLIC host)

@@ -1,9 +1,9 @@
 add_library(
-	rogue
+	app
 	STATIC
-	include/app/sample.h
+	include/app/app.h
 	src/app.cpp
 )
 
-target_include_directories(rogue PUBLIC include)
-target_include_libraries(app PUBLIC algorithms host)
+target_include_directories(app PUBLIC include)
+target_link_libraries(app PUBLIC algorithms host)

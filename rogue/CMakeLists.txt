@@ -26,7 +26,7 @@ add_subdirectory(app)
 add_subdirectory(algorithms)
 add_subdirectory(host)
 
-add_executable(FalconRogue MACOSX_BUNDLE main.cpp)
+add_executable(FalconRogue main.cpp)
 
 target_link_libraries(FalconRogue PRIVATE app)
 
