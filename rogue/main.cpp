@@ -8,4 +8,5 @@ int main(){
 	std::cout << "Enter number 2" << std::endl;
 	std::cin >> host.val2;
 	passParameters(host);
+	std::cin.get();
 }

@@ -1,36 +1,18 @@
-set(FALCONROGUE_ORG_NAME "Jeffinators")
-set(FALCONROGUE_APP_NAME "FalconRogue")
-
-execute_process(
-	COMMAND git rev-list HEAD --count
-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-	OUTPUT_VARIABLE GIT_COUNT
-	OUTPUT_STRIP_TRAILING_WHITESPACE)
-execute_process(
-	COMMAND git rev-parse --short HEAD
-	WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-	OUTPUT_VARIABLE GIT_HASH
-	OUTPUT_STRIP_TRAILING_WHITESPACE)
-
-if(GIT_HASH STREQUAL "")
-	set(FALCONROGUE_GIT_REV "Development version")
-else()
-	set(FALCONROGUE_GIT_REV "${GIT_COUNT}-${GIT_HASH}")
-endif()
-
-if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
-	set(LINUX TRUE)
-endif()
+set(ROGUE_ORG_NAME "Jeffinators")
+set(ROGUE_APP_NAME "Rogue")
 
 add_subdirectory(app)
-add_subdirectory(algorithms)
-add_subdirectory(host)
 
-add_executable(FalconRogue main.cpp)
+add_executable(Rogue main.cpp)
 
-target_link_libraries(FalconRogue PRIVATE app)
+target_link_libraries(Rogue PRIVATE app)
 
-set_target_properties(FalconRogue PROPERTIES OUTPUT_NAME FalconRogue
+set_target_properties(Rogue PROPERTIES OUTPUT_NAME Rogue
 	ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
 	LIBRARY_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
 	RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+
+if(WIN32)
+	set_property(DIRECTORY ${CMAKE_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT Rogue)
+	set_target_properties(Rogue PROPERTIES VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_SOURCE_DIR}/build-windows/bin")
+endif()
