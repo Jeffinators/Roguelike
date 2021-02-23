@@ -1,8 +1,6 @@
 set(ROGUE_ORG_NAME "Jeffinators")
 set(ROGUE_APP_NAME "Rogue")
 
-add_subdirectory(app)
-
 add_executable(Rogue main.cpp)
 
 target_link_libraries(Rogue PRIVATE app)
