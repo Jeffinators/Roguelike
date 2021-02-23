@@ -1,9 +1,11 @@
 set(ROGUE_ORG_NAME "Jeffinators")
 set(ROGUE_APP_NAME "Rogue")
 
+add_subdirectory(game)
+
 add_executable(Rogue main.cpp)
 
-target_link_libraries(Rogue PRIVATE app)
+target_link_libraries(Rogue PRIVATE game)
 
 set_target_properties(Rogue PROPERTIES OUTPUT_NAME Rogue
 	ARCHIVE_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/lib"
